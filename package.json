@@ -1,0 +1,16 @@
+{
+  "name": "Coveo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^91.0.0",
+    "nightwatch": "^1.6.4"
+  }
+}
