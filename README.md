@@ -23,6 +23,7 @@ The project includes the following test suites, each of which cover the above te
 5. ReactAlt.js: Includes testcases to test https://todomvc.com/examples/react-alt/#/ . The elements and functions in this file is defined in ReactAltPage.js
 
 I have used Nightwatch to write the testcases
+The sceenshots to each testcase are in test_output folder
 
 How to run:
 1. Clone the project
