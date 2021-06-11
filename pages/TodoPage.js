@@ -82,7 +82,7 @@ module.exports ={
                         browser.elementIdText(elementsObj.ELEMENT, function (result) {
                             if(result.value == todo){
                                 browser
-                                    .moveTo(elementsObj.ELEMENT, 0, 0)
+                                    .moveTo(elementsObj.ELEMENT)
                                     .doubleClick()
                                     .pause(100)
                                     .keys(newValue)
@@ -104,7 +104,7 @@ module.exports ={
                                 browser
                                 .elementIdAttribute(elementsObj.ELEMENT, 'data-reactid', function(reactID){
                                     browser
-                                        .moveTo(elementsObj.ELEMENT, 0, 0)
+                                        .moveTo(elementsObj.ELEMENT)
                                         .click("button[data-reactid='"+reactID.value+".0.2'")
                                         .pause(100)
                                 });

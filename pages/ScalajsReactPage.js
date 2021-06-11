@@ -47,13 +47,13 @@ module.exports ={
                         browser.elementIdText(elementsObj.ELEMENT, function (result) {
                             if(result.value == todo){
                                 browser
-                                    .moveTo(elementsObj.ELEMENT, 0, 0)
+                                    .moveTo(elementsObj.ELEMENT)
+                                    .pause(100)
                                     .doubleClick()
                                     .pause(100)
                                     .keys(newValue)
                                     .keys(browser.Keys.ENTER)
                                     .pause(100)
-                                    //.assert.containsText(".view label", todo+newValue)
                             }
                         });
                     });
@@ -68,8 +68,8 @@ module.exports ={
                             if(result.value == todo){
                                 index = index+1
                                 browser
-                                .moveTo(elementsObj.ELEMENT, 0, 0)
-                                .useXpath().click("/html/body/section/div/section/ul/li["+index+"]/div/button")
+                                    .moveTo(elementsObj.ELEMENT)
+                                    .useXpath().click("/html/body/section/div/section/ul/li["+index+"]/div/button")
                             }
                         });
                     });
