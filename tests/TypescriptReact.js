@@ -6,6 +6,8 @@ module.exports = {
             .navigate()
             .waitForElementVisible('@header')
             .assert.containsText('@header', "todos");
+
+        browser.deleteCookies()
     },
 
     'Create Todo': function(browser){
@@ -18,7 +20,7 @@ module.exports = {
             .pressEnter(browser)
             .pause(1000)
             .assert.containsText(".view label", todo)
-            .saveScreenshot("tests_output/todo.png");
+            .saveScreenshot("tests_output/todo-Typescript.png");
     },
 
     'Get todo element': function(browser){
@@ -58,7 +60,7 @@ module.exports = {
             .setValue(todoplaceholder, todo4)
             .keys(browser.Keys.ENTER)
             .pause(100)
-            .saveScreenshot("tests_output/todo-added.png")
+            .saveScreenshot("tests_output/todo-added-Typescript.png")
 
     },
 
@@ -72,6 +74,7 @@ module.exports = {
         
         browser
             .assert.containsText(".completed label", todo)
+            .saveScreenshot("tests_output/todo-completed-Typescript.png")
     },
 
     'Uncheck todo': function(browser){
@@ -81,6 +84,9 @@ module.exports = {
         page
             .navigate()
             .uncheckTodo(browser, todo)
+
+        browser
+            .saveScreenshot("tests_output/todo-uncheck-Typescript.png")
     },
 
     'Edit todo': function(browser){
@@ -91,6 +97,9 @@ module.exports = {
         page
             .navigate()
             .editTodo(browser, todo, newValue)
+
+        browser
+            .saveScreenshot("tests_output/todo-edit-Typescript.png")
     },
 
     'Remove todo' : function(browser){
@@ -102,6 +111,9 @@ module.exports = {
             .removeTodo(browser, todo);
             
         page.viewActiveTodos(browser);
+
+        browser
+            .saveScreenshot("tests_output/todo-remove-Typescript.png")
     },
 
     'Complete todos and Clear Completed': function(browser){
@@ -117,6 +129,10 @@ module.exports = {
 
         page.clearCompleted(browser);
         page.viewActiveTodos(browser);
+
+        browser
+            .saveScreenshot("tests_output/todo-clear-completed-Typescript.png")
+            .end();
 
     }
 

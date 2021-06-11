@@ -6,6 +6,8 @@ module.exports = {
             .navigate()
             .waitForElementVisible('@header')
             .assert.containsText('@header', "todos");
+
+        browser.deleteCookies()
     },
 
     'Create Todo': function(browser){
@@ -18,7 +20,7 @@ module.exports = {
             .pressEnter(browser)
             .pause(1000)
             .assert.containsText(".view label", todo)
-            .saveScreenshot("tests_output/todo.png");
+            .saveScreenshot("tests_output/todo-React.png");
     },
 
     'Get todo element': function(browser){
@@ -58,7 +60,7 @@ module.exports = {
             .setValue(todoplaceholder, todo4)
             .keys(browser.Keys.ENTER)
             .pause(100)
-            .saveScreenshot("tests_output/todo-added.png")
+            .saveScreenshot("tests_output/todo-added-React.png")
 
     },
 
@@ -71,6 +73,7 @@ module.exports = {
             .completeTodo(browser, todo);
         
         browser
+            .saveScreenshot("tests_output/todo-completed-React.png")
             .assert.containsText(".completed label", todo)
     },
 
@@ -90,7 +93,12 @@ module.exports = {
 
         page
             .navigate()
-            .editTodo(browser, todo, newValue)
+            .editTodo(browser, todo, newValue);
+
+        page.viewActiveTodos(browser);
+
+        browser
+            .saveScreenshot("tests_output/todo-edited-React.png")
     },
 
     'Remove todo' : function(browser){
@@ -102,6 +110,9 @@ module.exports = {
             .removeTodo(browser, todo);
             
         page.viewActiveTodos(browser);
+
+        browser
+            .saveScreenshot("tests_output/todo-remove-React.png")
     },
 
     'Complete todos and Clear Completed': function(browser){
@@ -117,6 +128,10 @@ module.exports = {
 
         page.clearCompleted(browser);
         page.viewActiveTodos(browser);
+
+        browser
+            .saveScreenshot("tests_output/todo-Clear-completed-React.png")
+            .end()
 
     }
 

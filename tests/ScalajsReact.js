@@ -6,6 +6,8 @@ module.exports = {
             .navigate()
             .waitForElementVisible('@header')
             .assert.containsText('@header', "todos");
+
+        browser.deleteCookies()
     },
 
     'Create Todo': function(browser){
@@ -18,7 +20,7 @@ module.exports = {
             .pressEnter(browser)
             .pause(1000)
             .assert.containsText(".view label", todo)
-            .saveScreenshot("tests_output/todo.png");
+            .saveScreenshot("tests_output/todo-Scalajs.png");
     },
 
     'Add todos': function(browser){
@@ -42,7 +44,7 @@ module.exports = {
             .setValue(todoplaceholder, todo4)
             .keys(browser.Keys.ENTER)
             .pause(100)
-            .saveScreenshot("tests_output/todo-added.png")
+            .saveScreenshot("tests_output/todo-added-Scalajs.png")
 
     },
 
@@ -53,6 +55,9 @@ module.exports = {
         page
             .navigate()
             .completeTodo(browser, todo);
+
+        browser
+            .saveScreenshot("tests_output/todo-completed-Scalajs.png")
             
     },
 
@@ -64,7 +69,9 @@ module.exports = {
             .navigate()
             .uncheckTodo(browser, todo)
 
-        browser.pause(1000)
+        browser
+            .saveScreenshot("tests_output/todo-uncheck-Scalajs.png")
+
     },
 
     'Edit todo': function(browser){
@@ -76,7 +83,8 @@ module.exports = {
             .navigate()
             .editTodo(browser, todo, newValue)
 
-        browser.pause(1000)
+        browser
+            .saveScreenshot("tests_output/todo-edit-Scalajs.png")
     },
 
     'Remove todo' : function(browser){
@@ -88,6 +96,9 @@ module.exports = {
             .removeTodo(browser, todo);
             
         page.viewActiveTodos(browser);
+
+        browser
+            .saveScreenshot("tests_output/todo-removed-Scalajs.png")
     },
 
     'Complete todos and Clear Completed': function(browser){
@@ -103,6 +114,10 @@ module.exports = {
 
         page.clearCompleted(browser);
         page.viewActiveTodos(browser);
+
+        browser
+            .saveScreenshot("tests_output/todo-clear-completed-Scalajs.png")
+            .end();
 
     }
 
