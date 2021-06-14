@@ -1,5 +1,5 @@
 # Coveo
-This project includes complete end-to-end testing for http://todomvc.com/examples/react/#/ 
+This project includes complete end-to-end testing for http://todomvc.com/examples/
 
 The main test cases include the following:
 1. Reach URL: Tests if url can be reached
@@ -15,20 +15,22 @@ The main test cases include the following:
 
 Test suites:
 
-The project includes the following test suites, each of which cover the above testcases for the corresponding pages:
-1. TodoListReact.js : Includes testcases to test https://todomvc.com/examples/react/#/ . The elements and functions in this file is defined in TodoPage.js
+1. ReactAlt.js: Includes testcases to test https://todomvc.com/examples/react-alt/#/ . The elements and functions in this file is defined in ReactAltPage.js
 2. ReactBackbone.js: Includes testcases to test https://todomvc.com/examples/react-backbone/ . The elements and functions in this file is defined in ReactBackbonePage.js
 3. ScalajsReact.js: Includes testcases to test https://todomvc.com/examples/scalajs-react/#/ . The elements and functions in this file is defined in ScalajsReactPage.js
-4. TypescriptReact.js: Includes testcases to test https://todomvc.com/examples/typescript-react/#/ . The elements and functions in this file is defined in TypescriptPage.js
-5. ReactAlt.js: Includes testcases to test https://todomvc.com/examples/react-alt/#/ . The elements and functions in this file is defined in ReactAltPage.js
+4. TodoListReact.js : Includes testcases to test https://todomvc.com/examples/react/#/ . The elements and functions in this file is defined in TodoPage.js
+5. TypescriptAngular.js: Includes testcases to test https://todomvc.com/examples/typescript-angular/#/ . The elements and functions in this file is defined in TypescriptAngularPage.js
+6.TypescriptBackbone.js: Includes testcases to test https://todomvc.com/examples/typescript-backbone/. The elements and functions in this file is defined in TypescriptBackbonePage.js
+7.TypescriptReact.js: Includes testcases to test https://todomvc.com/examples/typescript-react/#/ . The elements and functions in this file is defined in TypescriptPage.js
 
-I have used Nightwatch to write the testcases
+I have used Nightwatch and javascript to write the testcases
 The sceenshots to each testcase are in test_output folder
 
 How to run:
 1. Clone the project
 2. Make sure you have nightwatch and Node.js
-3. To run individual test suite run the following command in the terminal with the test suite path: npm test tests/TodolistReact.js
+3. To run all testcases run the following command in the terminal: npm test
+4. To run individual test suite run the following command in the terminal with the test suite path: npm test tests/TodolistReact.js
 
 
 
