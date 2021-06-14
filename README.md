@@ -19,8 +19,8 @@ Test suites:
 2. ReactBackbone.js: Includes testcases to test https://todomvc.com/examples/react-backbone/ . The elements and functions in this file is defined in ReactBackbonePage.js
 3. ScalajsReact.js: Includes testcases to test https://todomvc.com/examples/scalajs-react/#/ . The elements and functions in this file is defined in ScalajsReactPage.js
 4. TodoListReact.js : Includes testcases to test https://todomvc.com/examples/react/#/ . The elements and functions in this file is defined in TodoPage.js
-5. TypescriptAngular.js: Includes testcases to test https://todomvc.com/examples/typescript-angular/#/ . The elements and functions in this file is defined in TypescriptAngularPage.js
-6.TypescriptBackbone.js: Includes testcases to test https://todomvc.com/examples/typescript-backbone/. The elements and functions in this file is defined in TypescriptBackbonePage.js
+5. TypescriptAngular.js: Includes testcases to test https://todomvc.com/examples/typescript-angular/#/ . The elements and functions in this file is defined in TypescriptAngularPage.js\n
+6.TypescriptBackbone.js: Includes testcases to test https://todomvc.com/examples/typescript-backbone/. The elements and functions in this file is defined in TypescriptBackbonePage.js\n
 7.TypescriptReact.js: Includes testcases to test https://todomvc.com/examples/typescript-react/#/ . The elements and functions in this file is defined in TypescriptPage.js
 
 I have used Nightwatch and javascript to write the testcases
