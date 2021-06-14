@@ -98,8 +98,9 @@ module.exports = {
             .navigate()
             .editTodo(browser, todo, newValue)
 
-        browser
-            .saveScreenshot("tests_output/todo-edit-ReactBackbone.png");
+        browser.useCss()
+            .saveScreenshot("tests_output/todo-edit-ReactBackbone.png")
+            .assert.containsText(".view label", todo+newValue);
     },
 
     'Remove todo' : function(browser){
@@ -131,7 +132,7 @@ module.exports = {
         page.viewActiveTodos(browser);
 
         browser
-            .saveScreenshot("tests_output/todo-clear-completedReactBackbone.png")
+            .saveScreenshot("tests_output/todo-clear-completed-ReactBackbone.png")
             .end();
 
     }

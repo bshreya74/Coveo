@@ -97,8 +97,9 @@ module.exports = {
 
         page.viewActiveTodos(browser);
 
-        browser
+        browser.useCss()
             .saveScreenshot("tests_output/todo-edited-React.png")
+            .assert.containsText(".view label", todo+newValue);
     },
 
     'Remove todo' : function(browser){

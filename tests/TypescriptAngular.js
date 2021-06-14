@@ -1,6 +1,6 @@
 module.exports = {
     'Reach Url': function(browser) {
-        const page = browser.page.ScalajsReactPage();
+        const page = browser.page.TypescriptAngularPage();
 
         page
             .navigate()
@@ -11,7 +11,7 @@ module.exports = {
     },
 
     'Create Todo': function(browser){
-        const page = browser.page.ScalajsReactPage();
+        const page = browser.page.TypescriptAngularPage();
         const todo = 'Grocery';
 
         page
@@ -20,7 +20,7 @@ module.exports = {
             .pressEnter(browser)
             .pause(1000)
             .assert.containsText(".view label", todo)
-            .saveScreenshot("tests_output/todo-Scalajs.png");
+            .saveScreenshot("tests_output/todo-TypescriptAngular.png");
     },
 
     'Add todos': function(browser){
@@ -29,9 +29,9 @@ module.exports = {
         const todo3 = 'Water Plants'
         const todo4 = 'Cook dinner'
 
-        const todoplaceholder = 'input[class = "new-todo"]'
+        const todoplaceholder = 'input[ng-model = "newTodo"]'
         browser
-            .url("https://todomvc.com/examples/scalajs-react/#/")
+            .url("https://todomvc.com/examples/typescript-angular/#/")
             .setValue(todoplaceholder, todo1)
             .keys(browser.Keys.ENTER)
             .pause(100)
@@ -44,26 +44,25 @@ module.exports = {
             .setValue(todoplaceholder, todo4)
             .keys(browser.Keys.ENTER)
             .pause(100)
-            .saveScreenshot("tests_output/todo-added-Scalajs.png")
+            .saveScreenshot("tests_output/todo-added-TypescriptAngular.png")
 
     },
 
     'Complete todo': function(browser){
-        const page = browser.page.ScalajsReactPage();
+        const page = browser.page.TypescriptAngularPage();
         const todo = "Grocery"
         
         page
             .navigate()
             .completeTodo(browser, todo);
-
-        browser.useCss()
-            .saveScreenshot("tests_output/todo-completed-Scalajs.png")
-            .assert.containsText("li[class = 'completed'] label", todo)
-            
+        
+       browser.useCss()
+            .saveScreenshot("tests_output/todo-completed-TypescriptAngular.png")
+           .assert.containsText("li[class = 'ng-scope completed'] label", todo)
     },
 
     'Uncheck todo': function(browser){
-        const page = browser.page.ScalajsReactPage();
+        const page = browser.page.TypescriptAngularPage();
         const todo = "Grocery"
 
         page
@@ -71,13 +70,13 @@ module.exports = {
             .uncheckTodo(browser, todo)
 
         browser.useCss()
-            .saveScreenshot("tests_output/todo-uncheck-Scalajs.png")
-            .assert.containsText(".view label", todo)
+            .saveScreenshot("tests_output/todo-uncheck-TypescriptAngular.png")
+            .assert.containsText("li[class = 'ng-scope'] label", todo)
 
     },
 
     'Edit todo': function(browser){
-        const page = browser.page.ScalajsReactPage();
+        const page = browser.page.TypescriptAngularPage();
         const todo = "Grocery"
         const newValue = " - get bread"
 
@@ -86,12 +85,12 @@ module.exports = {
             .editTodo(browser, todo, newValue)
 
         browser.useCss()
-            .saveScreenshot("tests_output/todo-edit-Scalajs.png");
-           
+            .saveScreenshot("tests_output/todo-edit-TypescriptAngular.png")
+            .assert.containsText("li[class = 'ng-scope'] label", todo+newValue)
     },
 
     'Remove todo' : function(browser){
-        const page = browser.page.ScalajsReactPage();
+        const page = browser.page.TypescriptAngularPage();
         const todo = "Finish test"
 
         page
@@ -101,29 +100,27 @@ module.exports = {
         page.viewActiveTodos(browser);
 
         browser
-            .saveScreenshot("tests_output/todo-removed-Scalajs.png")
+            .saveScreenshot("tests_output/todo-removed-TypescriptAngular.png")
     },
 
     'Complete todos and Clear Completed': function(browser){
-        const page = browser.page.ScalajsReactPage();
-        const todo1 = "- get breadGrocery"
+        const page = browser.page.TypescriptAngularPage();
+        const todo1 = "Grocery - get bread"
         const todo2 = "Laundry"
 
         page
             .navigate()
-            .completeTodo(browser, todo1);
-        
-        page.completeTodo(browser, todo2);
+            .completeTodos(browser, todo1, todo2);
+
 
         page.clearCompleted(browser);
         page.viewActiveTodos(browser);
 
         browser
-            .saveScreenshot("tests_output/todo-clear-completed-Scalajs.png")
+            .saveScreenshot("tests_output/todo-clear-completed-TypescriptAngular.png")
             .end();
 
     }
-
 
 
 }

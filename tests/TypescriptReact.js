@@ -98,8 +98,9 @@ module.exports = {
             .navigate()
             .editTodo(browser, todo, newValue)
 
-        browser
+        browser.useCss()
             .saveScreenshot("tests_output/todo-edit-Typescript.png")
+            .assert.containsText(".view label", todo+newValue);
     },
 
     'Remove todo' : function(browser){

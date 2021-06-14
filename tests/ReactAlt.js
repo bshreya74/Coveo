@@ -97,6 +97,10 @@ module.exports = {
         page
             .navigate()
             .editTodo(browser, todo, newValue)
+
+        browser.useCss()
+            .saveScreenshot("tests_output/todo-edit-ReactAlt.png")
+            .assert.containsText(".view label", todo+newValue)
     },
 
     'Remove todo' : function(browser){
