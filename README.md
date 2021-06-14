@@ -28,7 +28,7 @@ The sceenshots to each testcase are in test_output folder
 
 How to run:
 1. Clone the project
-2. Make sure you have nightwatch and Node.js
+2. Make sure you have nightwatch and Node.js installed
 3. To run all testcases run the following command in the terminal: npm test
 4. To run individual test suite run the following command in the terminal with the test suite path: npm test tests/TodolistReact.js
 
